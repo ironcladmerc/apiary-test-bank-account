@@ -1,0 +1,59 @@
+#Bank Account API
+Bank Account is a simple API allowing consumers to retrieve balance,create,update
+Address and Delete Account.
+## Account Collection [/accounts]
+### Create an Account [POST]
++ Request (application/json)
+
+        {
+        "Name": "Alex",
+        "Telephone": "+91 7209878909",
+        "Email": "abc@gmail.com",
+        "DOB": "16-06-1989",
+        "Marital Status":"Single",
+        "Occupation":"Private Job",
+        "Nationality":"Indian",
+        "PassportNum":"2143234",
+        "Account_type": "Salary",
+        "Address":"Pune,India"
+        }
+        
++ Response 201 (application/json)
+
+        {
+        "Account_Num": "65379425862478",
+        "Description": "Account has been Created Successfully"
+        }
+        
+### Get Account Balance [GET/accounts/{accountid}]
++ Parameters
+    + accountid (string) - Account id
+    
++ Response 201 (application/json)
+
+        {
+        "Account_num": "65379425862478",
+        "Balance": "4598245.00"
+        }
+        
+### Update an Account Address [PUT]
++ Request (application/json)
+
+        {
+        "Name": "Alex",
+        "Account_Num": "65379425862478",
+        "Email": "abc@gmail.com",
+        "Address":"Delhi,India"
+        }
+        
++ Response 201 (text/plain)
+
+        Address has been Updated.
+        
+### Delete an Account [DELETE/accounts/{accountid}]
++ Parameters
+    + accountid (string) - Account Id
+    
++ Response 200 (text/plain)
+
+        Account has been Deleted.
